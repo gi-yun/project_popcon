@@ -22,31 +22,4 @@
 	  		  from faq
 	  		 where faq_idx=#{faq_idx}
   	</select>
-  	
-	<select id="selectMyQna" resultType="QnaDTO">
- 			select qna_title,
- 				   qna_text
- 			  from CUSTOMER_QNA
-  	</select>
-  	<insert id="postMyQna" parameterType="QnaDTO">
-  		
-	  insert into CUSTOMER_QNA(
-	  			  qna_title, 
-	  			  qna_text)
-	  	   values (
-	  	          {#qna_title},
-	  	          {#qna_text})				
-  	</insert>
-  	<update id="editMyQna" parameterType="QnaDTO">
-  	
-  	       update CUSTOMER_QNA(
-  	 		  set qna_title = #{qna_title},
-  	 			  qna_text = #{qna_text})
-  	 	    where qna_idx = #{qna_idx}
-  	</update>
-  	<delete id="deleteMyQna" parameterType="long">
-  	
-  	 delete from CUSTOMER_QNA
-  	       
-  	</delete>
   </mapper>
